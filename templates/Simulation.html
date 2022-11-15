@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Simulation</title>
+        <meta http-equiv="refresh" content="0.5" >
+        <style>
+            table, th, td {
+              border: 1px solid black;
+            }
+            </style>
+        </head>
+
+        <body>
+
+       <!-- <img id="lightImage" onclick="changeImage()" src="static/images/bulboff.png" width="100" height="180">
+
+        <h1>Light</h1>
+        <p id="light"></p>
+
+        <h1>Curtains</h1>
+        <p id="curtains"></p>   
+        
+        <h1>Thermostat</h1>
+        <p id="thermoMode"> </p>
+        <p id="temp"> </p>-->
+
+        <table style="width:100%">
+            <tr>
+              <th>Device</th>
+              <th>Value</th> 
+            </tr>
+            <tr>
+                <th><img id="lightImage"  src="static/images/bulboff.png" width="200" height="220"></th>
+                <th><p id="lightval"></p></th> 
+            </tr>
+            <tr>
+                <th><img id="curtainimage"  src="static/images/curtains.png" width="200" height="220"></th>
+                <th><p id="curtainval"></p></th> 
+            </tr>
+            <tr>
+                <th><img id="thermoimage"  src="static/images/thermoheat.png" width="200" height="220"></th>
+                <th><p id="thermoval"></p></th> 
+            </tr>
+          </table>
+        
+
+    </body>
+    
+    <script>
+        var lightImage = document.getElementById('lightImage');
+       
+        var lightBrightness = {{devices["lightBrightness"]}};
+        var curtainPer = {{devices["curtainPer"]}};
+        heat = {{devices["heat"]}};
+        var temp = {{devices["temp"]}};
+
+        if(lightBrightness==0){
+            lightImage.src = "static/images/bulboff.png";
+        }else{
+            lightImage.src = "static/images/bulbon.png";
+        }
+
+        if(curtainPer==0){
+            curtainimage.src = "static/images/curtains.png";
+        }else{
+            curtainimage.src = "static/images/curtains.png";
+        }
+        
+        if(heat==1){
+            thermoimage.src = "static/images/thermoheat.png";
+            document.getElementById("thermoval").innerHTML = "heat :" + temp +" degree celcious" ;
+        }else{
+            thermoimage.src = "static/images/thermocold.png";
+            document.getElementById("thermoval").innerHTML = "cold :" + temp +" degree celcious" ;
+        }
+
+
+        document.getElementById("lightval").innerHTML = lightBrightness + " %";
+        document.getElementById("curtainval").innerHTML = curtainPer + " %";
+
+    </script>
+</html>

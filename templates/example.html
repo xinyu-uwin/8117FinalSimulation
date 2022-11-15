@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <style>
+            table, th, td {
+              border: 1px solid black;
+            }
+            </style>
+        </head>
+
+    <body>
+        <table style="width:100%">
+            <tr>
+              <th>Device</th>
+              <th>Value</th> 
+            </tr>
+            <tr>
+                <th><img id="lightImage" onclick="changeImage()" src="bulboff.png" width="200" height="220"></th>
+                <th>Off : 0%</th> 
+            </tr>
+            <tr>
+                <th><img id="lightImage" onclick="changeImage()" src="curtain.png" width="200" height="220"></th>
+                <th>Off : 0%</th> 
+            </tr>
+            <tr>
+                <th><img id="lightImage" onclick="changeImage()" src="thermocold.png" width="200" height="220"></th>
+                <th>Off : 0%</th> 
+            </tr>
+          </table>
+          
+
+    </body>
+    
+    <script>
+        function changeImage() {
+        var image = document.getElementById('lightImage');
+        if (image.src.match("bulbon")) {
+            image.src = "bulboff.png";
+        } else {
+            image.src = "bulbon.png";
+        }
+}
+
+    </script>
+</html>
